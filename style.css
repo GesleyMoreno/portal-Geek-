@@ -77,3 +77,32 @@ body {
   transform: translateY(-4px);
   box-shadow: 0 4px 15px rgba(108, 92, 231, 0.3);
 }
+/* Campo de Busca */
+.search-container {
+  margin-bottom: 2rem;
+  width: 100%;
+}
+
+#search-input {
+  width: 100%;
+  padding: 0.8rem 1.2rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+#search-input:focus {
+  border-color: var(--primary-color);
+}
+
+.no-results {
+  grid-column: 1 / -1;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 1.1rem;
+  padding: 2rem 0;
+}
