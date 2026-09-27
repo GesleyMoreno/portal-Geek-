@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portal Geek & Tech | Projeto Portfólio</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <!-- Cabeçalho Principal -->
-    <header class="main-header">
-      <div class="logo">
-        <h1>Geek<span>Portal</span></h1>
-      </div>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GeekPortal</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Cabeçalho -->
+  <header class="main-header">
+    <div class="header-container">
+      <h1 class="logo">Geek<span>Portal</span></h1>
       <nav class="main-nav">
         <ul>
-          <li><a href="#destaques">Destaques</a></li>
-          <li><a href="#curiosidades">Curiosidades</a></li>
-          <li><a href="#sobre">Sobre o Projeto</a></li>
+          <li><a href="#">Destaques</a></li>
+          <li><a href="#">Curiosidades</a></li>
+          <li><a href="#">Sobre o Projeto</a></li>
         </ul>
       </nav>
-    </header>
+    </div>
+  </header>
 
-    <!-- Conteúdo Principal -->
-    <main class="content-container">
-      <h2 class="section-title">Últimas Análises</h2>
-      
-      <div class="search-container">
-        <input 
-          type="text" 
-          id="search-input" 
-          placeholder="Pesquisar por título, categoria ou conteúdo..." 
-        />
-      </div>
+  <!-- Conteúdo Principal -->
+  <main class="content-container">
+    <h2 class="section-title">Últimas Análises</h2>
 
-      <div class="cards-grid">
-        <!-- O JavaScript vai injetar os cards aqui -->
-      </div>
-    </main>
+    <!-- Campo de Busca -->
+    <div class="search-container">
+      <input 
+        type="text" 
+        id="search-input" 
+        placeholder="Pesquisar por título, categoria ou conteúdo..." 
+      />
+    </div>
 
-    <!-- Rodapé -->
-    <footer class="main-footer">
-      <p>&copy; 2026 - Desenvolvido como projeto de portfólio em HTML5 e CSS3 puro.</p>
-    </footer>
+    <!-- Grelha de Cards -->
+    <div class="cards-grid">
+      <!-- O JavaScript vai injetar os cards aqui -->
+    </div>
+  </main>
 
-    <script src="script.js"></script>
-  </body>
+  <!-- Rodapé -->
+  <footer class="main-footer">
+    <p>&copy; 2026 - Desenvolvido como projeto de portfólio em HTML5 e CSS3 puro.</p>
+  </footer>
+
+  <!-- Script JavaScript -->
+  <script src="script.js"></script>
+</body>
 </html>

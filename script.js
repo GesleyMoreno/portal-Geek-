@@ -1,4 +1,4 @@
-// 1. Dados das matérias (Simulando um banco de dados/API)
+// 1. Lista de matérias (banco de dados)
 const posts = [
   {
     categoria: "Marvel",
@@ -17,14 +17,20 @@ const posts = [
   }
 ];
 
-// 2. Seleciona o container do HTML onde os cards vão entrar
+// 2. Seleção dos elementos do DOM
 const container = document.querySelector('.cards-grid');
+const searchInput = document.getElementById('search-input');
 
-// 3. Função para renderizar os cards dinamicamente
-function carregarPosts() {
-  container.innerHTML = ""; // Limpa o container
+// 3. Função para renderizar os cards
+function carregarPosts(listaPosts) {
+  container.innerHTML = "";
 
-  posts.forEach(post => {
+  if (listaPosts.length === 0) {
+    container.innerHTML = `<p class="no-results">Nenhum resultado encontrado.</p>`;
+    return;
+  }
+
+  listaPosts.forEach(post => {
     const cardHTML = `
       <article class="card">
         <span class="tag">${post.categoria}</span>
@@ -36,5 +42,20 @@ function carregarPosts() {
   });
 }
 
-// Executa a função ao carregar a página
-carregarPosts();
+// 4. Evento de busca em tempo real
+searchInput.addEventListener('input', (e) => {
+  const termoBusca = e.target.value.toLowerCase();
+
+  const postsFiltrados = posts.filter(post => {
+    return (
+      post.titulo.toLowerCase().includes(termoBusca) ||
+      post.categoria.toLowerCase().includes(termoBusca) ||
+      post.descricao.toLowerCase().includes(termoBusca)
+    );
+  });
+
+  carregarPosts(postsFiltrados);
+});
+
+// 5. Carregamento inicial
+carregarPosts(posts);
