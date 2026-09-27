@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
       categoria: "Séries",
       titulo: "Estratégia e Poder em Peaky Blinders",
       descricao: "Uma análise detalhada da ascensão de Tommy Shelby e os bastidores políticos.",
-      imagem: "https://images.unsplash.com/photo-1518173946687-a4c8a383392e?auto=format&fit=crop&w=600&q=80"
+      imagem: "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?auto=format&fit=crop&w=800&q=80"
     },
     {
       categoria: "Animes",
@@ -92,11 +92,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Evento de digitação no campo de busca
+  // Evento de digitação na busca
   if (searchInput) {
     searchInput.addEventListener('input', carregarPosts);
   }
 
-  // Carregamento inicial da página
+  // Carregamento inicial
   carregarPosts();
 });
