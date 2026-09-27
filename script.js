@@ -1,4 +1,5 @@
-// 1. Lista de matérias (banco de dados)
+document.addEventListener('DOMContentLoaded', () => {
+
   const posts = [
     {
       categoria: "Marvel",
@@ -17,21 +18,34 @@
     }
   ];
 
-  // 2. Seleção dos elementos do DOM
   const container = document.querySelector('.cards-grid');
   const searchInput = document.getElementById('search-input');
+  const filterButtons = document.querySelectorAll('.btn-filter');
 
-  // 3. Função para renderizar os cards na tela
-  function carregarPosts(listaPosts) {
+  let categoriaAtiva = 'todos';
+
+  function carregarPosts() {
     if (!container) return;
+
+    const termoBusca = searchInput ? searchInput.value.toLowerCase().trim() : '';
+
+    const postsFiltrados = posts.filter(post => {
+      const bateCategoria = categoriaAtiva === 'todos' || post.categoria === categoriaAtiva;
+      const bateTexto = post.titulo.toLowerCase().includes(termoBusca) ||
+                        post.categoria.toLowerCase().includes(termoBusca) ||
+                        post.descricao.toLowerCase().includes(termoBusca);
+
+      return bateCategoria && bateTexto;
+    });
+
     container.innerHTML = "";
 
-    if (listaPosts.length === 0) {
+    if (postsFiltrados.length === 0) {
       container.innerHTML = `<p class="no-results">Nenhum resultado encontrado.</p>`;
       return;
     }
 
-    listaPosts.forEach(post => {
+    postsFiltrados.forEach(post => {
       const cardHTML = `
         <article class="card">
           <span class="tag">${post.categoria}</span>
@@ -43,23 +57,22 @@
     });
   }
 
-  // 4. Evento de busca em tempo real
-  if (searchInput) {
-    searchInput.addEventListener('input', (e) => {
-      const termoBusca = e.target.value.toLowerCase().trim();
+  // Evento de clique nos botões de categoria
+  filterButtons.forEach(button => {
+    button.addEventListener('click', () => {
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
 
-      const postsFiltrados = posts.filter(post => {
-        return (
-          post.titulo.toLowerCase().includes(termoBusca) ||
-          post.categoria.toLowerCase().includes(termoBusca) ||
-          post.descricao.toLowerCase().includes(termoBusca)
-        );
-      });
-
-      carregarPosts(postsFiltrados);
+      categoriaAtiva = button.getAttribute('data-category');
+      carregarPosts();
     });
+  });
+
+  // Evento de digitação na busca
+  if (searchInput) {
+    searchInput.addEventListener('input', carregarPosts);
   }
 
-  // 5. Carregamento inicial ao abrir a página
-  carregarPosts(posts);
-;
+  // Carregamento inicial
+  carregarPosts();
+});
