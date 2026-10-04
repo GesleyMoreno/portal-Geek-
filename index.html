@@ -12,12 +12,11 @@
   <header class="main-header">
     <div class="header-container">
       <h1 class="logo">Geek<span>Portal</span></h1>
-      <nav class="main-nav">
-        <ul>
-          <li><a href="#">Destaques</a></li>
-          <li><a href="#">Curiosidades</a></li>
-          <li><a href="#">Sobre o Projeto</a></li>
-        </ul>
+      <nav class="nav-links">
+        <a href="#" class="nav-link active" data-tab="todos">Início</a>
+        <a href="#" class="nav-link" data-tab="destaques">Destaques</a>
+        <a href="#" class="nav-link" data-tab="curiosidades">Curiosidades</a>
+        <a href="#" class="nav-link" id="btn-sobre">Sobre o Projeto</a>
       </nav>
     </div>
   </header>
@@ -34,13 +33,9 @@
       <button class="btn-filter" data-category="Séries">Séries</button>
     </div>
 
-    <!-- Campo de Busca -->
+    <!-- Barra de Busca -->
     <div class="search-container">
-      <input 
-        type="text" 
-        id="search-input" 
-        placeholder="Pesquisar por título, categoria ou conteúdo..." 
-      />
+      <input type="text" id="search-input" placeholder="Buscar por título ou tema..." />
     </div>
 
     <!-- Grelha de Cards (O JavaScript irá preencher esta área) -->
@@ -49,8 +44,32 @@
 
   <!-- Rodapé -->
   <footer>
-    <p>&copy; 2026 - Desenvolvido como projeto de portfólio em HTML5, CSS3 e JavaScript puro.</p>
+    <p>&copy; 2026 - Desenvolvido como projeto de portfólio em HTML5, CSS3 e JavaScript</p>
   </footer>
+
+  <!-- Modal Sobre o Projeto -->
+  <div id="modal-sobre" class="modal">
+    <div class="modal-content">
+      <span class="close-modal">&times;</span>
+      <h2>Sobre o Portal Geek</h2>
+      <p>O <strong>Portal Geek</strong> é um projeto desenvolvido para centralizar notícias, análises e curiosidades sobre a cultura pop, incluindo animes, cinema, séries e o universo dos quadrinhos.</p>
+      
+      <h3>Tecnologias Utilizadas</h3>
+      <ul class="tech-list">
+        <li><strong>HTML5:</strong> Estruturação semântica e acessível.</li>
+        <li><strong>CSS3:</strong> Estilização moderna, Grid Layout, Flexbox e design responsivo.</li>
+        <li><strong>JavaScript (ES6+):</strong> Manipulação dinâmica do DOM, filtros de busca, categorização e renderização modular de dados.</li>
+        <li><strong>Git & GitHub:</strong> Controle de versão e hospedagem do código fonte.</li>
+      </ul>
+
+      <h3>Objetivo do Projeto</h3>
+      <p>Demonstrar a aplicação prática de conceitos fundamentais de desenvolvimento Web Front-End na criação de interfaces dinâmicas, limpas e interativas.</p>
+
+      <div class="author-info">
+        <p>Desenvolvido por <strong>Gesley Moreno da Silva</strong></p>
+      </div>
+    </div>
+  </div>
 
   <!-- Script JS carregado no final do body -->
   <script src="script.js"></script>
