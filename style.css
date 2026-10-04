@@ -316,4 +316,38 @@ footer {
   background-color: #3b82f6;
   color: #ffffff;
   border-color: #3b82f6;
+}/* Estilos do Modal de Leitura de Matéria */
+.modal-noticia-content {
+  max-width: 700px;
+  max-height: 85vh;
+  overflow-y: auto;
+}
+
+.modal-noticia-img {
+  width: 100%;
+  height: 280px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin: 16px 0;
+}
+
+.modal-noticia-body {
+  line-height: 1.7;
+  color: #d1d5db;
+  font-size: 1rem;
+}
+
+.modal-noticia-body p {
+  margin-bottom: 1rem;
+}
+
+/* Indicador visual de card clicável */
+.card {
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
 }
