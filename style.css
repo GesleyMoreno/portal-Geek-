@@ -283,4 +283,37 @@ footer {
   padding: 4px 8px;
   border-radius: 4px;
   text-transform: uppercase;
+}/* Estilização dos Links em Formato de Botões */
+.nav-links {
+  display: flex;
+  gap: 10px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+.nav-link {
+  display: inline-block;
+  padding: 8px 18px;
+  background-color: #2a2a35;
+  color: #e0e0e0;
+  text-decoration: none !important;
+  border-radius: 20px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  cursor: pointer;
+}
+
+.nav-link:hover {
+  background-color: #3b3b4a;
+  color: #ffffff;
+}
+
+.nav-link.active {
+  background-color: #3b82f6;
+  color: #ffffff;
+  border-color: #3b82f6;
 }
